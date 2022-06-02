@@ -8,15 +8,10 @@
     "dev": "nodemon server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tudorie-mariuscosmin/jonas_brothers.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tudorie-mariuscosmin/jonas_brothers/issues"
-  },
-  "homepage": "https://github.com/tudorie-mariuscosmin/jonas_brothers#readme",
   "dependencies": {
     "axios": "^0.24.0",
     "babel-runtime": "^6.26.0",
