@@ -124,30 +124,6 @@ app.get('/api/posts', async (req, res) => {
 
 
 
-app.get('/api/subreddits/all', async (req, res) => {
-    try {
-
-        const { data: { data: { children } } } = await axios.get("https://www.reddit.com/subreddits/popular.json?limit=10")
-        const dbSubs = await Subreddit.find()
-        console.log("db", dbSubs)
-        const result = children.map(subred => {
-            const { data } = subred
-            return {
-                name: data.display_name,
-                photo: data.header_img,
-                color: data.primary_color,
-                isFollowed: dbSubs.some(sub => sub.name === data.display_name)
-            }
-        })
-        res.json(result)
-    } catch (err) {
-        console.log(err)
-        res.status(500).send(err)
-    }
-})
-
-
-
 
 const PORT = 8080
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`))
